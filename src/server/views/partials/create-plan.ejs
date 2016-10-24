@@ -1,0 +1,19 @@
+<div class="bigContainer">
+    <div class="smallContainer">
+        <h3> Create Plan </h3>
+        <form action="/users/<%=user.id%>/plans/new" method="POST" id="postPlanAndSearchPlace" class="formEdit" >
+          <input type="text" name="name" class="textField" id="planName" placeholder="Plan Name" required>
+          <select class="selectCity" name="location" id="planLocation" required>
+            <option class="option" value="Austin">Austin</option>
+            <option vlaue="San Francisco">San Francisco</option>
+            <option value="New York">New York</option>
+            <option value="Seattle">Seattle</option>
+            <option value="Miami">Miami</option>
+            <option value="Chicago">Chicago</option>
+          </select>
+          <input type="date" name="date" id="planDate" placeholder="Date" required="">
+          <input type="text" name="keyword" value placeholder="Search">
+          <button class="btn waves-effect waves-light submit" type="submit" value="create">Submit</button>
+        </form>
+    </div>
+</div>

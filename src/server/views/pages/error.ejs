@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <% include ../partials/head %>
+    <title>The 404</title>
+    <link rel="stylesheet" type="text/css" href="/css/404.css">
+</head>
+<body>
+    <div class="container">
+      <h1>It's the 404! We're so sorry you couldn't find what you're looking for</h1>
+      <div class="img">
+          <img src="http://howtosavetheworld.ca/images/jackzieglercartoon.jpg" style="width:677px;height:509px;" alt="Cartoon by Jack Ziegler">
+      </div>
+        <div class="bigContainer">
+            <div class="smallContainer">
+                <div class="link">
+                    <a href="/users/profile/<%= user.id %>">Go back to profile</a>
+
+                </div>
+            </div>
+        </div>
+    <div class="bigContainer">
+        <div class="smallContainer">
+          <div class="link">
+        <a href="/">Home</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+<%
+  var backdrops = {
+    'AUSTIN':'/images/atxsky.jpg',
+    'CHICAGO':'/images/chicagosky.png',
+    'MIAMI':'/images/miamisky.jpg',
+    'NEW YORK': '/images/nysky.jpg',
+    'SAN FRANCISCO': '/images/sanfranciscosky.jpg',
+    'SEATTLE': '/images/seattlesky.jpg'
+  }
+%>
+
+  <div class="card-image"><a href="/plans/<%=plan.id%>"><img class="homeImage"  src="<%= backdrops[plan.city.toUpperCase()] %>">

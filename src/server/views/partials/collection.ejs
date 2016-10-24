@@ -1,0 +1,34 @@
+<ul class="collection">
+  <% let photo_url;            %>
+  <% collection.forEach((item) => { %>
+    <%
+
+    if(item.photos && item.photos.length > 0 ){
+
+    photo_url = [
+        "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference",
+        "=",
+        item.photos[0].photo_reference,
+        "&",
+        "key",
+        "=",
+        "AIzaSyBehx791hFZ10uYgcCoO2KfJ7dYs-BIO44"
+      ].join('')
+
+    }else {
+      photo_url = item.icon
+    }
+    %>
+    <li class="collection-item avatar">
+      <img src="<%= photo_url %>" alt="" class="circle">
+      <span class="title"><%= item.name %> | <%= item.rating || 'none'; %></span>
+      <p>
+      <% var chips = item.types.filter((type)=>(type !== 'point_of_interest' && type !== 'establishment')) %>
+      <%- include ../partials/chips %>
+      <a href="/search/details/<%=item.place_id%>" class="secondary-content">
+      Add to plan
+    </a>
+    </p>
+</li>
+<% }) %>
+</ul>

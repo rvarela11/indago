@@ -1,0 +1,430 @@
+h1, h2, h3, h4, h5, h6, p {
+  font-family: 'Raleway', sans-serif;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* -------------------- Nav Bar (Logged Out) --------------------*/
+
+.navBar {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid #dce0e0;
+}
+
+.navBar a {
+  width: 20%;
+  color: #000;
+}
+
+.navBar .logo {
+  font-size: 2.5em;
+  color: #1560bd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid #dce0e0;
+}
+
+.navBar .navBarDrop {
+  width: 75% !important;
+}
+
+.navBar a:nth-child(1n+2) {
+  font-size: 1em;
+  color: rgba(0, 0, 0, 0.6);
+  border-left: 1px solid #dce0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navBar a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.navBar input[type=text] {
+  border-bottom: none;
+  padding-top: 1em;
+  font-size: 1.25em;
+}
+
+.navBar input[type=text]:focus {
+  border-bottom: 0 !important;
+  box-shadow: 0 0 0 0 !important;
+}
+
+.navBar ::-webkit-input-placeholder {
+  padding-left: 2%;
+}
+
+.navBar ::-moz-placeholder {
+  padding-left: 2%;
+}
+
+.dropdown-content a {
+  width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+  .mobile-nav {
+    display: none;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .navBar {
+    display: none;
+  }
+  .mobile-nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5% 1.5% 0 1.5%;
+  }
+  .side-bar-icon {
+    font-size: 3rem !important;
+    color: #1560bd;
+  }
+  .mobile-logo {
+    color: #1560bd;
+    font-size: 2rem;
+  }
+  .bigContainer{
+    display: none;
+  }
+  .smallContainer{
+    width: 90% !important;
+    border: none !important;
+  }
+  .side-nav a {
+    color: rgba(0, 0, 0, 0.6) !important;
+  }
+}
+
+/* -------------------- Nav Bar (Logged In) --------------------*/
+
+.navBar a:first-child {
+  color: #1560bd;
+}
+
+
+/* -------------------- Index.ejs --------------------*/
+
+.cont {
+  width: 71.5%;
+  margin: auto;
+}
+
+.homePage h3 {
+  margin-top: 1em;
+}
+
+.s3 {
+  width: 100%;
+  display: flex;
+}
+
+.homeImagesContainer {
+  width: 100%;
+  display: flex;
+}
+
+.homeImage {
+  border: 1px solid #dce0e0;
+  width: 300px;
+  height: 200px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  /*position: relative;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homeImage {
+  border: 1px solid #dce0e0;
+  width: 300px;
+  height: 200px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  /*position: relative;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.city-title {
+  font-size: 1em;
+  background-color: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  width: 100%;
+  height: 3em;
+}
+
+.bigContainer {
+  display: flex;
+}
+
+.smallContainer {
+  border: 1px solid #dce0e0;
+  margin: auto;
+  margin-top: 1em;
+  width: 35%;
+  padding: 2%;
+}
+
+.smallContainer h3 {
+  text-align: center;
+}
+
+.formEdit input[type=text], .formEdit input[type=password] {
+  font-size: 1.25em;
+}
+
+.formEdit input[type=text]:focus, .formEdit input[type=password]:focus {
+  border-bottom: 1px solid #1560bd !important;
+}
+
+.formEdit button {
+  background-color: #1560bd !important;
+  display: flex;
+  margin: auto;
+}
+
+/* -------------------- Feed.ejs --------------------*/
+
+.card {
+  margin: 0.25rem !important;
+}
+
+.row .col {
+  padding: 0 !important;
+}
+
+.card-left {
+  text-align: left;
+}
+
+.card-bottom {
+  width: 99%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  border: 1px solid #dce0e0;
+  font-size: 1.5rem;
+  color: rgba(0, 0, 0, 0.6);
+  padding-left: 20px;
+}
+
+.fa-2x {
+  margin-left: 25%;
+  color: #1560bd;
+}
+
+.card-bottom-right {
+  color: #1560bd;
+  width: 100%;
+  text-align: right;
+  margin-right: 1%;
+}
+
+.fa-star-o  {
+  color: #1560bd;
+  margin-left: 80%;
+}
+
+/* -------------------- My Plan (Single).ejs --------------------*/
+
+.deletePlanForm button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: red;
+}
+
+.searchBar input[type=text]{
+  width: 50%;
+}
+
+.bigC {
+  border: 1px solid #dce0e0;
+}
+
+.resultsPlan {
+  display: flex;
+  font-size: 1.5rem;
+}
+
+.resultsPlan p {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.rpt p:first-child {
+  padding-left: 0.5rem;
+  padding-right: 3rem;
+  display: flex;
+  align-items: center;
+}
+
+.rpt p:nth-child(2) {
+  padding-left: 1.5rem;
+}
+
+.rpb p:first-child {
+  border: 1px solid #dce0e0;
+  margin-left: 0.5rem;
+  width: 75px;
+  height: 75px;
+  margin-right: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rpb p:nth-child(2) {
+  display: flex;
+  align-items: center;
+}
+
+.resultsPlanButton {
+  display: flex;
+}
+
+.resultsPlanButton a {
+  color: rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+  padding-left: 1%;
+  padding-right: 1%;
+  cursor: pointer;
+  font-size: 1.15rem;
+}
+
+.resultsPlanButton a:hover {
+  color: #1560bd;
+}
+
+.resultsPlanButton button {
+  margin-left: 1%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: red;
+}
+
+/* -------------------- fav-places.ejs --------------------*/
+.favPlacesImages {
+  display: flex;
+}
+
+.favPlacesImages p{
+  border: 1px solid #000;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand {
+  height: 600px;
+  color: #1560bd;
+  font-size: 15em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* -------------------- user_edit.ejs --------------------*/
+.deleteUserButton button{
+  margin-top: 5%;
+  background-color: transparent !important;
+  border: none;
+  cursor: pointer;
+  color: red;
+  box-shadow: none;
+}
+
+/* -------------------- my_new_plan.ejs --------------------*/
+
+.selectCity {
+  color: #1560bd
+}
+
+.select-dropdown li {
+  color: #1560bd
+}
+
+/* -------------------- collections.ejs --------------------*/
+
+.avatar .secondary-content {
+  color: #1560bd;
+}
+
+/* -------------------- search.ejs --------------------*/
+
+.searchBarInput input[type=text]:focus {
+  border-bottom: 1px solid #1560bd !important;
+}
+
+.icons option {
+  color: #1560bd;
+}
+
+.dropdown-content li>a, .dropdown-content li>span {
+  color: #1560bd !important;
+}
+
+.btn {
+  background-color: #1560bd !important;
+  margin-left: 25%;
+}
+
+.input-field input[type=text]{
+  width: 75%;
+}
+
+
+/* -------------------- search-details.ejs --------------------*/
+
+.search-details-select {
+  width: 50%;
+  padding: 0;
+}
+
+strong {
+  font-size: 1.15rem;
+  font-weight: 900;
+}
+
+.innerContainer {
+  border: 1px solid #dce0e0;
+  margin-top: 2%;
+  padding-left: 1%;
+}
+
+.searchInformation{
+  border: 1px solid #dce0e0;
+  padding-left: 1%;
+}
+
+.searchInformation button{
+  margin-left: 0;
+  margin-bottom: 1%;
+}
+
+.invalid {
+  border : 3px solid #ff0000;
+}
+
+/* -------------------- plan-details.ejs --------------------*/
+
+.col.s12.plan-details-header {
+  padding-left: 2%;
+}

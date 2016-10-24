@@ -1,0 +1,18 @@
+
+<ul class="sortable collection">
+  <% places.forEach((place) => { %>
+    <li class="ui-state-default collection-item avatar">
+    <input class="time_shifter" id="plan_id_<%=place.place_id%>" type="hidden" value="<%= place.start_time %>">
+      <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%=place.google_photo_ref%>&key=AIzaSyBehx791hFZ10uYgcCoO2KfJ7dYs-BIO44" alt="" class="circle">
+      <span class="title"><%= place.name %></span>
+      <p><%= place.city %><br></p>
+      <div class="row"><div class="col s6 l2">
+      <input type="time" value="<%= place.start_time %>" style="color:black" <%= false ? "" :"disabled"; %> >
+      </div></div>
+      <a href="./places/<%=place.place_id%>" class="secondary-content">
+        <i id="_mode_edit" class="material-icons">mode_edit</i>
+        <i id="delete" class="material-icons">delete</i>
+      </a>
+    </li>
+  <% }) %>
+</ul>

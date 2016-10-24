@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <% include ../partials/head %>
+    <title>Plans</title>
+  </head>
+  <body>
+    <% include ../partials/nav %>
+    <div class="container">
+      <header class="homePage">
+        <h3><%= page_type %></h3>
+      </header>
+      <% plans.forEach((plan)=> { %>
+      <div>
+        <div class="col s1 m1 l1">
+          <div class="card">
+
+          <% include ../partials/back-image %>
+
+            <div class="city-title card-title card-left"><%= plan.name %></div>
+       </div></a></div></div>
+        <div class="card-bottom">
+          <div class=""><%= plan.score %></div>
+           <div class=""><%= plan.upvote %></div>
+           <div><a href="/plans/<%=plan.id%>/upvote"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></a></div>
+           <%if(user) {%>
+           <div><a href="/users/<%=user.id%>/plans/<%=plan.id%>/favorite"><i class="fa fa-star-o fa-1x" aria-hidden="true"></i></a></div>
+           <%}%>
+            <% if (plan.city !== page_type) { %>
+               <div class="card-bottom-right"><%= plan.city %></div>
+            <% } %>
+        </div>
+      </div>
+      <%}) %>
+    </div>
+  </body>
+</html>

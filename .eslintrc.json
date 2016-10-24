@@ -1,0 +1,48 @@
+{
+    "plugins": ["html"],
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true,
+        "mocha": true,
+        "jquery": true
+    },
+    "extends": "eslint:recommended",
+    "rules": {
+        "no-console": ["warn", {
+            "allow": ["warn", "error"]
+        }],
+        "indent": [
+            "error",
+            2, {
+                "VariableDeclarator": {
+                    "var": 2,
+                    "let": 2,
+                    "const": 3
+                },
+                "MemberExpression": 1,
+                "SwitchCase": 1
+            }
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "no-unused-vars": 1
+    },
+
+    "settings": {
+        "html/indent": "0",
+        "html/indent": "+2",
+        "html/indent": "space",
+        "html/report-bad-indent": 2
+    }
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <% include ../partials/head %>
+    <title>Favorite Places</title>
+  </head>
+  <body>
+    <% include ../partials/nav %>
+    <div class="container">
+      <header class="homePage">
+        <h3>Favorite Places</h3>
+      </header>
+      <div class="bigC">
+        <h5>Austin</h5>
+        <div class="row">
+          <% places.forEach((card)=>{ %>
+
+              <% include ../partials/card-sm %>
+
+          <% })%>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

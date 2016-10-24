@@ -1,0 +1,21 @@
+language:
+- node_js
+node_js:
+- 6.2.2
+# env:
+#   global:
+#   # - NODE_ENV=test
+install:
+- npm install
+- npm run knex migrate:rollback
+- npm run knex migrate:latest
+- npm run knex seed:run
+
+script:
+ - npm run coverage
+ - npm run codecov
+branches:
+  only:
+    - master
+    - stable
+    - develop

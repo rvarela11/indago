@@ -1,0 +1,71 @@
+{
+  "name": "Indago",
+  "description": "...",
+  "version": "0.1.0",
+  "private": false,
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": "6.2.2"
+  },
+  "engine-strict": true,
+  "main": "./src/server/server.js",
+  "scripts": {
+    "start": "nodemon ./src/server/server.js",
+    "pretest": "knex migrate:latest --env test && knex seed:run --env test",
+    "test": "NODE_ENV=test ./node_modules/mocha/bin/_mocha",
+    "awsStart": "node ./node_modules/.bin/pm2 start ./src/server/server.js --name indago",
+    "stop": "pm2 delete all",
+    "dev": "nodemon ./src/server/server.js",
+    "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec",
+    "codecov": "codecov",
+    "knex": "knex",
+    "pm2": "pm2",
+    "gulp": "gulp",
+    "istanbul": "istanbul",
+    "mocha": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rvarela11/indago.git"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": ">=0.0.3",
+    "body-parser": ">=1.15.1",
+    "connect-flash": ">=0.1.1",
+    "cookie-session": ">=2.0.0-alpha.1",
+    "debug": ">=2.2.0",
+    "ejs": ">=2.5.2",
+    "express": ">=4.13.4",
+    "helmet": ">=2.3.0",
+    "install": ">=0.8.1",
+    "knex": "^0.12.5",
+    "method-override": ">=2.3.6",
+    "morgan": ">=1.7.0",
+    "npm": ">=3.10.8",
+    "pg": ">=6.1.0",
+    "pm2": ">=2.0.18",
+    "promise": "^7.1.1",
+    "query-string": "^4.2.3",
+    "request": "^2.75.0",
+    "supertest": "^2.0.0"
+  },
+  "devDependencies": {
+    "chai": ">=3.5.0",
+    "chai-http": ">=3.0.0",
+    "codecov": ">=1.0.1",
+    "eslint": ">=3.7.1",
+    "eslint-html-reporter": ">=0.5.2",
+    "eslint-plugin-html": "^1.5.3",
+    "gulp-codecov": ">=2.0.2",
+    "gulp-eslint": ">=3.0.1",
+    "gulp-nodemon": ">=2.1.0",
+    "gulp-plumber": ">=1.1.0",
+    "istanbul": ">=0.4.5",
+    "mocha": ">=3.1.2",
+    "mocha-eslint": ">=3.0.1",
+    "nodemon": ">=1.11.0",
+    "run-sequence": ">=1.2.2",
+    "tiny-lr": ">=0.2.1"
+  }
+}

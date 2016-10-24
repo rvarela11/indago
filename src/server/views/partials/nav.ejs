@@ -1,0 +1,123 @@
+
+<%if (loggedIn) {%>
+<!-- Mobile Nav -->
+<ul id="slide-out" class="side-nav">
+  <li class="no-padding">
+    <ul class="collapsible collapsible-accordion">
+      <li>
+        <a class="collapsible-header">City<i class="material-icons">arrow_drop_down</i></a>
+        <div class="collapsible-body">
+          <ul>
+            <li><a href="/plans/cities/Austin">Austin</a></li>
+            <li><a href="/plans/cities/San%20Francisco">San Francisco</a></li>
+            <li><a href="/plans/cities/New%20York">New York</a></li>
+            <li><a href="/plans/cities/Seattle">Seattle</a></li>
+            <li><a href="plans/cities/Miami">Miami</a></li>
+            <li><a href="/plans/cities/Chicago">Chicago</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </li>
+  <li class="no-padding">
+    <ul class="collapsible collapsible-accordion">
+      <li>
+        <a class="collapsible-header">Plans<i class="material-icons">arrow_drop_down</i></a>
+        <div class="collapsible-body">
+          <ul>
+            <li><a href="/users/<%=user.id%>/plans"> My Plans </a></li>
+            <li><a href="/users/<%=user.id%>/fav-plans">Favorite Plans</a></li>
+            <li><a href="/users/<%=user.id%>/fav-places">Favorite Places</a></li>
+            <li><a href="/users/<%=user.id%>/plans/new">Create Plan</a></li>
+            <li><a href="/plans">Browse</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </li>
+  <li class="no-padding">
+    <ul class="collapsible collapsible-accordion">
+      <li>
+        <a class="collapsible-header">User<i class="material-icons">arrow_drop_down</i></a>
+        <div class="collapsible-body">
+          <ul>
+            <li><a href="/users/profile/<%=user.id%>">Edit</a></li>
+            <li><a href="/users/logout">Log Out</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
+<div class="mobile-nav">
+  <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons side-bar-icon">menu</i></a>
+  <a class="logo mobile-logo" href="/">indago</a>
+</div>
+<div class="navBar">
+    <a class="logo" href="/">indago</a>
+    <a class="dropdown-button navBarDrop" href="#" data-activates="dropdown3"> City </a>
+    <a class="dropdown-button" href="#" data-activates="dropdown1"> Plans </a>
+    <a class="dropdown-button" href="#" data-activates="dropdown2"> User </a>
+</div>
+<ul id="dropdown3" class="dropdown-content">
+  <li><a href="/plans/cities/Austin">Austin</a></li>
+  <li><a href="/plans/cities/San%20Francisco">San Francisco</a></li>
+  <li><a href="/plans/cities/New%20York">New York</a></li>
+  <li><a href="/plans/cities/Seattle">Seattle</a></li>
+  <li><a href="/plans/cities/Miami">Miami</a></li>
+  <li><a href="/plans/cities/Chicago">Chicago</a></li>
+</ul>
+<ul id="dropdown1" class="dropdown-content">
+    <li><a href= "/users/<%=user.id%>/plans"> My Plans </a></li>
+    <li><a href="/users/<%=user.id%>/fav-plans">Favorite Plans</a></li>
+    <li><a href="/users/<%=user.id%>/fav-places">Favorite Places</a></li>
+    <li><a href="/users/<%=user.id%>/plans/new">Create Plan</a></li>
+    <li><a href="/plans">Browse</a></li>
+</ul>
+<ul id="dropdown2" class="dropdown-content">
+  <li><a href="/users/profile/<%=user.id%>">Edit</a></li>
+  <li><a href="/users/logout">Log Out</a></li>
+</ul>
+<% } else { %>
+  <!-- Mobile Nav -->
+<ul id="slide-out" class="side-nav">
+  <li class="no-padding">
+    <ul class="collapsible collapsible-accordion">
+      <li>
+        <a class="collapsible-header">City<i class="material-icons">arrow_drop_down</i></a>
+        <div class="collapsible-body">
+          <ul>
+            <li><a href="/plans/cities/Austin">Austin</a></li>
+            <li><a href="/plans/cities/San%20Francisco">San Francisco</a></li>
+            <li><a href="/plans/cities/New%20York">New York</a></li>
+            <li><a href="/plans/cities/Seattle">Seattle</a></li>
+            <li><a href="/plans/cities/Miami">Miami</a></li>
+            <li><a href="/plans/cities/Chicago">Chicago</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </li>
+  <li><a href="/users/signup"> Sign Up </a></li>
+  <li><a href="/users/login"> Login </a></li>
+</ul>
+<div class="mobile-nav">
+  <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons side-bar-icon">menu</i></a>
+  <a class="logo mobile-logo" href="/">indago</a>
+</div>
+
+<div class="navBar">
+    <a class="logo" href="/">indago</a>
+    <a class="dropdown-button navBarDrop" href="#" data-activates="dropdown4"> City </a>
+    <a href="/users/signup"> Sign Up </a>
+    <a href="/users/login"> Login </a>
+</div>
+<ul id="dropdown4" class="dropdown-content">
+  <li><a href="/plans/cities/Austin">Austin</a></li>
+  <li><a href="/plans/cities/San%20Francisco">San Francisco</a></li>
+  <li><a href="/plans/cities/New%20York">New York</a></li>
+  <li><a href="/plans/cities/Seattle">Seattle</a></li>
+  <li><a href="/plans/cities/Miami">Miami</a></li>
+  <li><a href="/plans/cities/Chicago">Chicago</a></li>
+</ul>
+<% } %>

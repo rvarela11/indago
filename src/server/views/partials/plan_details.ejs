@@ -1,0 +1,197 @@
+<script>
+
+$(function() {
+
+
+
+
+
+    var $input = $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 2, // Creates a dropdown of 15 years to control year
+    format: 'mmm dd, yy'
+    })
+    var picker = $input.pickadate('picker')
+
+    picker.set('select', '<%= plan.date %>' , { format: 'yyyy-mm-dd' });
+
+
+    //init the modal
+    //init the modal
+
+    $('input.autocomplete ').autocomplete({
+      data:{
+       "12:00 AM": null,
+       "12:30 AM": null,
+       "1:00 AM": null,
+       "1:30 AM": null,
+       "2:00 AM": null,
+       "2:30 AM": null,
+       "3:00 AM": null,
+       "3:30 AM": null,
+       "4:00 AM": null,
+       "4:30 AM": null,
+       "5:00 AM": null,
+       "5:30 AM": null,
+       "6:00 AM": null,
+       "6:30 AM": null,
+       "7:00 AM": null,
+       "7:30 AM": null,
+       "8:00 AM": null,
+       "8:30 AM": null,
+       "9:00 AM": null,
+       "9:30 AM": null,
+       "10:00 AM": null,
+       "10:30 AM": null,
+       "11:00 AM": null,
+       "11:30 AM": null,
+       "12:00 PM": null,
+       "12:30 PM": null,
+       "1:00 PM": null,
+       "1:30 PM": null,
+       "2:00 PM": null,
+       "2:30 PM": null,
+       "3:00 PM": null,
+       "3:30 PM": null,
+       "4:00 PM": null,
+       "4:30 PM": null,
+       "5:00 PM": null,
+       "5:30 PM": null,
+       "6:00 PM": null,
+       "6:30 PM": null,
+       "7:00 PM": null,
+       "7:30 PM": null,
+       "8:00 PM": null,
+       "8:30 PM": null,
+       "9:00 PM": null,
+       "9:30 PM": null,
+       "10:00 PM": null,
+       "10:30 PM": null,
+       "11:00 PM": null,
+       "11:30 PM": null
+     }});
+
+
+  });
+</script>
+<script>
+$('.modal-trigger').leanModal();
+
+
+
+function openModal1(place_id) {
+  //simulate ajax call to get the modal content
+
+  console.log(place_id.start_time);
+  var htmlFromServer = '';
+  $('#place_name').val(place_id.place_name);
+  var time_parts = ['12','00','AM']
+  if (place_id.start_time) {
+
+    time_parts = place_id.start_time.split(':')
+    if (time_parts[0]>12) {
+      time_parts[2] = 'PM';
+    }else {
+      time_parts[2] = 'AM'
+    }
+  }
+  $('input.autocomplete').val(parseInt(time_parts[0])+':'+time_parts[1]+' '+time_parts[2]);
+
+  //append the html to the modal
+  // $('#modal_content');
+  //init the tabs
+  $('ul.tabs').tabs();
+  //select the first tab
+  $('ul.tabs').tabs('select_tab', 'test1');
+  //open the modal
+  $('#modal1').openModal();
+
+};
+
+
+
+</script>
+<section>
+
+
+<div class="row">
+</div <!-- Modal Structure -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+
+      <div class="container">
+         <div class="row">
+          <h4><%= plan.name %> : <%= plan.city %></h4>
+      </div>
+    </div>
+    <div id="modal_content" class="row">
+      <div class="container">
+         <form class="col s12">
+           <div class="row">
+             <div class="input-field col s12">
+               <input placeholder="Name" id="place_name" type="text">
+               <label for="place_name">Name</label>
+             </div>
+           </div>
+           <div class="row">
+             <div class="input-field col s6 l2">
+               <input type="text" id="autocomplete-input" class="autocomplete">
+             </div>
+           </div>
+         </form>
+       </div>
+    </div>
+    <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Save</a>
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+    </div>
+  </div>
+</section>
+
+<!-- dslkjansdlkblkasdblkfdbakdbl  -->
+<div class="col s12 plan-details-header">
+  <div class="row">
+    <div class="input-field col s12" contenteditable="<%= is_editable || false %>">
+      <h3 class="header" >
+        <%= plan.name %>
+      </h3>
+    </div>
+    <div class="input-field col s12" contenteditable="<%= is_editable || false %>">
+      <h5 class="header">
+        <%= plan.city %>
+      </h5>
+    </div>
+    <div class="col s12 m3 l2">
+      <h5 class="header">
+        <input type="date" class="datepicker" style="color:black" <%= is_editable ? "" :"disabled"; %> >
+      </h5>
+      <a href="/search">Add places</a>
+    </div>
+  </div>
+</div>
+
+<ul class="sortable collection">
+  <% places.forEach((place) => { %>
+    <li class="ui-state-default collection-item avatar">
+    <input class="time_shifter" id="plan_id_<%=place.place_id%>" type="hidden" value="<%= place.start_time %>">
+      <img src="<%= place.photo_url %>" alt="" class="circle">
+      <span class="title"><%= place.name %></span>
+      <p><%= place.city %><br></p>
+      <div class="row"><div class="col s6 l2">
+      <input type="time" value="<%= place.start_time %>" style="color:black" <%= false ? "" :"disabled"; %> >
+      </div></div>
+      <span class="secondary-content">
+        <i name="plan_id_<%=place.place_id%>_mode_edit" onclick="openModal1({'place_name':'<%=place.name%>','start_time':'<%=place.start_time%>','place_city':'<%=place.city%>'})" class="material-icons edit-place">mode_edit</i>
+        <i name="plan_id_<%=place.place_id%>_delete" onclick="delete_event(<%=place.place_id%>)" class="material-icons edit-place">delete</i>
+      </span>
+    </li>
+  <% }) %>
+</ul>
+
+<script type="text/javascript">
+
+
+function delete_event(place_id) {
+var action = ''
+}
+</script>

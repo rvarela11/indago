@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <% include ../partials/head %>
+      <title>Login</title>
+    </head>
+    <body>
+      <% include ../partials/nav %>
+        <div class="bigContainer">
+            <div class="smallContainer">
+                <h3>Login Page</h3>
+                <form class="formEdit" action="/users/login" method="POST">
+                    <input type="text" name="email" value placeholder="Email">
+                    <input type="password" name="password" value placeholder="Password">
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Log In</button>
+                </form>
+            </div>
+        </div>
+    </body>
+
+</html>

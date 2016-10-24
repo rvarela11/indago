@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+
+</head>
+
+<body>
+    <% include ../partials/nav %>
+
+        <div class="container">
+            <header class="homePage">
+
+            </header>
+            <div class="row">
+
+            </div>
+            <div class="bigContainer">
+                <div class="smallContainer">
+                    <h3>Edit Your Profile</h3>
+                    <form class="formEdit" action="/users/profile/<%= user.id %>?_method=PATCH" method="POST">
+                        <input type="hidden" name="id" value="<%= user.id %>">
+                        <input type="text" value="<%= user.first_name %>" name="first_name" value placeholder="First Name">
+                        <input type="text" value="<%= user.last_name %>" name="last_name" value placeholder="Last Name">
+                        <input type="text" value="<%= user.username %>" name="username" value placeholder="Username">
+                        <input type="text" value="<%= user.email %>" name="email" value placeholder="Email">
+                        <input type="password" name="password" value placeholder="Password">
+                        <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    </form>
+                    <form class = "formEdit deleteUserButton" method="POST" action="/users/profile/<%= user.id %>?_method=DELETE">
+                        <button class="btn waves-effect waves-light" type="submit">Delete Profile</button>
+                    </form>
+                </div>
+            </div>
+
+</body>
+
+</html>

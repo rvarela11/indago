@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>search details</title>
+    <% include ../partials/head %>
+    <title>Search Details</title>
+  </head>
+  <body>
+    <% include ../partials/nav %>
+    <div class="container">
+      <header class="homePage">
+        <h3>Search Details</h3>
+        <h5><%= result.name %></h5>
+        <h5><%= result.formatted_address %></h5>
+        <h5><%= result.formatted_phone_number %></h5>
+        <h5>Rating: <%= result.rating %></h5>
+      </header>
+      <% if(user_plans) { %>
+        <div class="searchInformation">
+        <select class="search-details-select" id="planID">
+          <% user_plans.forEach((plan) => { %>
+            <option value=<%=plan.id%>>
+            <%= plan.name %>
+            </option>
+          <% }); %>
+        </select>
+        <input type="hidden" id="name" value=<%= result.name %>>
+        <input type="hidden" id="address" value=<%=result.formatted_address%>>
+        <input type="hidden" id="google_photo_ref" value=<%=result.photos[0].photo_reference%>>
+        <input type="hidden" id="userID" value=<%= user.id %>>
+        <select class="search-details-select" id="start_time">
+          <option value="9:00 AM">9:00 AM</option>
+          <option value="12:00 PM">12:00 PM</option>
+          <option value="3:00 PM">3:00 PM</option>
+          <option value="6:00 PM">6:00 PM</option>
+          <option value="9:00 PM">9:00 PM</option>
+        </select>
+        <a href="/users/<%=user.id%>/plans">
+        <button class="btn waves-effect waves-light backToSearch" type="submit" id="addPlace">Add to plan</button>
+      </a>
+      </div>
+      <% } %>
+      <div class="innerContainer">
+        <% if(result.reviews) {%>
+        <h5>Reviews:</h5>
+        <hr>
+        <% result.reviews.forEach((review) => { %>
+          <div class="review">
+          <% if (result.reviews.indexOf(review) < 5) { %>
+            <h6><strong>Author:</strong> <%= review.author_name %></h6>
+            <!-- <h6>Photo url:<%= review.h6rofile_h6hoto_url %></h6> -->
+            <h6><strong>Rating:</strong> <%= review.rating %></h6>
+            <h6><strong>Review:</strong> <%= review.text %></h6>
+            <!-- <h6>Posted:<%= review.time %></h6> -->
+          <% } %>
+          </div>
+          <hr>
+        <% }); %>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>

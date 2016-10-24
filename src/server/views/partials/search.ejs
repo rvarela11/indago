@@ -1,0 +1,30 @@
+<div class="row">
+      <form action="/search" method="GET">
+      <div class="col s12 m7">
+        <div class="row">
+          <div class="input-field col s12 searchBarInput">
+            <input type="text" name="keyword" class="validate">
+            <label for="search" data-error="wrong" data-success="right">Search</label>
+          </div>
+        </div>
+      </div>
+      <div class="input-field col s12 m3">
+        <select class="icons" name="location" required="true" >
+          <option value="" disabled selected>Select city</option>
+          <option value="Austin" data-icon="/images/atx.jpg" class="left circle">Austin</option>
+          <option value="San Francisco" data-icon="/images/sf.jpg" class="left circle">San Francisco</option>
+          <option value="New York" data-icon="/images/ny.jpg" class="left circle">New York</option>
+          <option value="Seattle" data-icon="/images/seattle.jpg" class="left circle">Seattle</option>
+          <option value="Miami" data-icon="/images/miami.jpg" class="left circle">Miami</option>
+          <option value="Chicago" data-icon="/images/chicago.png" class="left circle">Chicago</option>
+        </select>
+      </div>
+      <div class="input-field col s12 m2">
+        <button class="btn waves-effect waves-light searchButton" type="submit">Submit</button>
+       </div>
+    </form>
+      <div class="input-field col s12 m12">
+        <% include ../partials/collection %>
+      </div>
+    </div>
+  </div>
